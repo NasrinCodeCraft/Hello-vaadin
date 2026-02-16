@@ -4,6 +4,7 @@ import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.checkbox.Checkbox;
 import com.vaadin.flow.component.dependency.CssImport;
+import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -26,6 +27,18 @@ public class MainView extends VerticalLayout {
         });
         addButton.addClickShortcut(Key.ENTER);
 
-        add(new H1("Vaadin Todo!"), todosList, new HorizontalLayout(textField, addButton));
+        H1 title = new H1("Vaadin Todo!");
+        title.getStyle().set("width", "100%");
+        title.getStyle().set("text-align", "center");
+        title.getStyle().set("color", "hotpink");
+
+        Div container = new Div();
+        container.getStyle().set("width", "100%");
+        container.getStyle().set("display", "flex");
+        container.getStyle().set("justify-content", "center");
+        container.getStyle().set("align-items", "center");
+
+        container.add(new HorizontalLayout(textField, addButton));
+        add(title, todosList, container);
     }
 }
