@@ -1,0 +1,12 @@
+.my-textfield {
+    --vaadin-input-field-border-color: #ff66aa;
+    background-color: #fff5fa;
+}
+
+.my-checkbox {
+    --vaadin-checkbox-size: 22px;
+}
+
+.my-grid{
+    background: #ff66aa;
+}
