@@ -1,9 +1,12 @@
 package com.example.hello_vaadin;
 
+import com.vaadin.flow.component.Html;
 import com.vaadin.flow.component.Key;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.checkbox.Checkbox;
 import com.vaadin.flow.component.dependency.CssImport;
+import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -13,6 +16,9 @@ import com.vaadin.flow.router.Route;
 
 @Route("")
 @CssImport("./styles/my-styles.css")
+@CssImport("./styles/jalaliDate.css")
+@JsModule("./js/jalaliDate.js")
+
 public class MainView extends VerticalLayout {
     public MainView() {
         VerticalLayout todosList = new VerticalLayout();
@@ -40,5 +46,8 @@ public class MainView extends VerticalLayout {
 
         container.add(new HorizontalLayout(textField, addButton));
         add(title, todosList, container);
+
+        Html html = new Html("<input id='date' type=\"text\" data-jdp placeholder=\"لطفا یک تاریخ وارد نمایید\" />\n" + "    <input type=\"");
+        add(html);
     }
 }
